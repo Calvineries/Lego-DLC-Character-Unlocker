@@ -73,14 +73,14 @@ with gui.window(label='Nexus', width=380, height=280, no_title_bar=True, no_resi
             gui.add_text("Enter the game directory :")
             gui.add_input_text(tag="game_path", width=350, default_value="D:\SteamLibrary\steamapps\common\LEGO Batman 2")
             gui.add_text("")
-            gui.add_button(label="Unlock Characters", callback=on_unlock)
+            gui.add_button(label="Unlock DLC Characters", callback=on_unlock)
             gui.add_button(label="Reset DLC Characters", callback=on_reset)
             error_message = gui.add_text("", tag="error_message", color=(255, 0, 0))
             end_message = gui.add_text("", tag="end_message", color=(0, 255, 0))
 
 
         with gui.tab(label="About"):
-            gui.add_text("Version : 1.0.0")
+            gui.add_text("Version : 1.0.1")
             # 
             gui.add_text("GitHub Page : github.com/Calvineries\n/Lego-DLC-Character-Unlocker")            
             gui.add_text("")
