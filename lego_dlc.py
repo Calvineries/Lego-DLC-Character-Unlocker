@@ -45,14 +45,21 @@ def on_reset(sender, app_data):
 
     if path != "D:\SteamLibrary\steamapps\common\LEGO Batman 2":
         if os.path.isdir(os.path.join(path, "__DLC1__")):
-            if "// Characters added by Lego DLC Character Unlocker" in open(collection_file).read():
-                with open(collection_file, "r+") as file:
-                    lines = file.readlines()
-                    for i, line in enumerate(lines):
-                        if line.strip() == "// Characters added by Lego DLC Character Unlocker":
-                            file.truncate(i)
-                            gui.set_value("end_message", "Unlocked DLC characters have been removed!")
-                            break
+            with open(collection_file, "r") as file:
+                lines = file.readlines()
+
+            with open(collection_file, "w") as file:
+                found_marker = False
+                for line in lines:
+                    if not found_marker and line.strip() == "// Characters added by Lego DLC Character Unlocker":
+                        found_marker = True
+                    elif found_marker:
+                        continue
+                    else:
+                        file.write(line)
+
+            if found_marker:
+                gui.set_value("end_message", "Unlocked DLC characters have been removed!")
             else:
                 gui.set_value("error_message", "Error: Nothing to reset")
         else:
@@ -80,7 +87,7 @@ with gui.window(label='Nexus', width=380, height=280, no_title_bar=True, no_resi
 
 
         with gui.tab(label="About"):
-            gui.add_text("Version : 1.0.1")
+            gui.add_text("Version : 1.0.2")
             # 
             gui.add_text("GitHub Page : github.com/Calvineries\n/Lego-DLC-Character-Unlocker")            
             gui.add_text("")
