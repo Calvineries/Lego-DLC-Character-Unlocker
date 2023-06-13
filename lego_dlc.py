@@ -8,7 +8,7 @@ def on_unlock(sender, app_data):
     path = gui.get_value("game_path")
     collection_file = os.path.join(path, "CHARS", "COLLECTION.txt")
 
-    if path != "D:\SteamLibrary\steamapps\common\LEGO Batman 2 ":
+    if path != "D:\SteamLibrary\steamapps\common\LEGO Batman2":
         if os.path.isdir(os.path.join(path, "__DLC1__")):
             if not "// Characters added by Lego DLC Character Unlocker" in open(collection_file).read():
                 for root, dirs, files in os.walk(path):
@@ -43,7 +43,7 @@ def on_reset(sender, app_data):
     path = gui.get_value("game_path")
     collection_file = os.path.join(path, "CHARS", "COLLECTION.txt")
 
-    if path != "D:\SteamLibrary\steamapps\common\LEGO Batman 2 ":
+    if path != "D:\SteamLibrary\steamapps\common\LEGO Batman2":
         if os.path.isdir(os.path.join(path, "__DLC1__")):
             with open(collection_file, "r") as file:
                 lines = file.readlines()
@@ -78,7 +78,7 @@ with gui.window(label='Nexus', width=380, height=280, no_title_bar=True, no_resi
 
         with gui.tab(label='Game Selection'):
             gui.add_text("Enter the game directory :")
-            gui.add_input_text(tag="game_path", width=350, default_value="D:\SteamLibrary\steamapps\common\LEGO Batman 2 ")
+            gui.add_input_text(tag="game_path", width=350, default_value="D:\SteamLibrary\steamapps\common\LEGO Batman2")
             gui.add_text("")
             gui.add_button(label="Unlock DLC Characters", callback=on_unlock)
             gui.add_button(label="Reset DLC Characters", callback=on_reset)
