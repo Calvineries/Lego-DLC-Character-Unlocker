@@ -10,3 +10,7 @@ pip install dearpygui
 2) Run "lego_dlc.py"
 3) Enter your game directory and press "Unlock DLC Characters"  
 (You can undo this action at any time by pressing "Reset DLC Characters")
+
+## Known issue:  
+The characters work as expected.
+But icons and names may be incorrect or missing.  
