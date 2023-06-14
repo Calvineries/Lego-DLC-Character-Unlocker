@@ -27,7 +27,7 @@ def on_unlock(sender, app_data):
                                                 for line in lines:
                                                     if line.startswith("collect"):
                                                         line = line.replace("dlc_only", "")
-                                                        collection.write(line)
+                                                        collection.write("\n"+line)
                                                         added_number = added_number + 1
                                                         gui.set_value("end_message", f"{added_number} Characters has been added !")
             else:
@@ -87,7 +87,7 @@ with gui.window(label='Nexus', width=380, height=280, no_title_bar=True, no_resi
 
 
         with gui.tab(label="About"):
-            gui.add_text("Version : 1.0.2")
+            gui.add_text("Version : 1.0.3")
             # 
             gui.add_text("GitHub Page : github.com/Calvineries\n/Lego-DLC-Character-Unlocker")            
             gui.add_text("")
