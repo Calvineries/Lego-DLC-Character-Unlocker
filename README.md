@@ -1,5 +1,5 @@
 # Lego-DLC-Character-Unlocker
-![screenshots](https://media.discordapp.net/attachments/706932420615864332/1118094691360059412/image.png?ex=66028753&is=65f01253&hm=3e6832fdcd7b91b5b1b348183965194b4f6b20de16abdd988fc530ae06630b1b&=&format=webp&quality=lossless&width=565&height=418)
+![screenshots](https://i.imgur.com/hjdyND0.png)
 
 ## What are python dependencies?
 pip install dearpygui
